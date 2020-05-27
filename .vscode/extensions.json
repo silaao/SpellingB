@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "dracula-theme.theme-dracula",
+    "eamodio.gitlens",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "naumovs.color-highlight",
+    "PKief.material-icon-theme",
+    "wix.vscode-import-cost"
+  ]
+}

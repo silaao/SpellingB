@@ -1,0 +1,35 @@
+{
+  // Editor
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Dracula",
+  "editor.tabSize": 2,
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.compactFolders": false,
+  "editor.formatOnSave": true,
+  "window.titleBarStyle": "custom",
+
+  // Font
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 15,
+  "editor.fontLigatures": true,
+
+  // Files React / React Native in Javascript
+  "emmet.syntaxProfiles": { "javascipt": "jsx" },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+
+  // Formatter
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "javascriptreact"],
+
+  //For Javascript
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  }
+}
