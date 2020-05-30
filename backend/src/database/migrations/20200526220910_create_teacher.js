@@ -1,9 +1,11 @@
 exports.up = (knex) => {
   // O que deve ser feito
   return knex.schema.createTable('teacher', (table) => {
-    table.increments()
-    table.string('name')
-    table.timestamps()
+    table.increments('id')
+    table.string('name', 100)
+    table.string('username', 100)
+    table.string('password')
+    table.timestamps(true, true)
   })
 }
 
