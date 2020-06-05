@@ -14,7 +14,7 @@ module.exports = {
     const { id } = req.params
 
     try {
-      const [teacher] = await connection('teacher').where('id', id).select()
+      const teacher = await connection('teacher').where('id', id).first()
 
       if (!teacher) { return res.status(404).json('Teacher Not Found') }
 
@@ -28,10 +28,10 @@ module.exports = {
     const { name, username, password } = req.body
 
     try {
-      const [teacher] = await connection('teacher')
+      const [teacherId] = await connection('teacher')
         .insert({ name, username, password })
 
-      return res.status(200).json({ id: teacher })
+      return res.status(200).json({ id: teacherId })
     } catch (error) {
       return res.status(409).json(error)
     }
@@ -41,9 +41,9 @@ module.exports = {
     const { id } = req.params
     const { name, username, password } = req.body
 
-    const [teacherSearch] = await connection('teacher')
+    const teacherSearch = await connection('teacher')
       .where('id', id)
-      .select('id')
+      .first()
 
     if (!teacherSearch) { return res.status(404).json('Teacher not found') }
 
@@ -52,7 +52,7 @@ module.exports = {
         .where('id', id)
         .update({ name, username, password })
 
-      const [teacher] = await connection('teacher').where('id', id).select()
+      const teacher = await connection('teacher').where('id', id).first()
 
       return res.status(200).json(teacher)
     } catch (error) {

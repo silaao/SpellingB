@@ -1,4 +1,4 @@
-exports.up = (knex) => {
+exports.up = async (knex) => {
   return knex.schema.createTable('level', (table) => {
     table.increments('id')
     table.string('title', 100)
@@ -9,13 +9,17 @@ exports.up = (knex) => {
   }).createTable('word', (table) => {
     table.increments('id')
     table.string('word', 100)
-    table.integer('level_id')
-    table.timestamps(true, true)
 
-    table.foreign('level_id').references('level.id')
+    table.integer('level_id')
+      .notNullable()
+      .references('id')
+      .inTable('level')
+      .onDelete('CASCADE')
+
+    table.timestamps(true, true)
   })
 }
 
-exports.down = (knex) => {
+exports.down = knex => {
   return knex.schema.dropTable('word').dropTable('level')
 }

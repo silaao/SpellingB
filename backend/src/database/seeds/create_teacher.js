@@ -3,7 +3,6 @@ const faker = require('faker/locale/pt_BR')
 exports.seed = (knex) => {
   return knex('teacher').del()
     .then(() => {
-      // Generate fake teachers
       const teachers = []
 
       for (let i = 0; i < 10; i++) {
@@ -14,7 +13,6 @@ exports.seed = (knex) => {
         })
       }
 
-      // Inserts seed entries
       return knex('teacher').insert(teachers)
     })
 }

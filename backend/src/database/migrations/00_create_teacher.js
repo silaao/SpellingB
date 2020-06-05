@@ -1,5 +1,4 @@
-exports.up = (knex) => {
-  // O que deve ser feito
+exports.up = knex => {
   return knex.schema.createTable('teacher', (table) => {
     table.increments('id')
     table.string('name', 100)
@@ -9,7 +8,6 @@ exports.up = (knex) => {
   })
 }
 
-exports.down = (knex) => {
-  // O que fazer caso dê erro | CTRL + Z | Rollback
+exports.down = knex => {
   return knex.schema.dropTable('teacher')
 }
