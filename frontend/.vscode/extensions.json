@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "dracula-theme.theme-dracula",
+    "eamodio.gitlens",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "jpoissonnier.vscode-styled-components",
+    "naumovs.color-highlight",
+    "PKief.material-icon-theme",
+    "rocketseat.RocketseatReactNative",
+    "rocketseat.rocketseatreactjs",
+    "wix.vscode-import-cost"
+  ]
+}
