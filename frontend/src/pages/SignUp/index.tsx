@@ -11,12 +11,11 @@ import {
   Form,
   Title,
   Input,
-  ButtonSignIn,
-  Div,
   ButtonSignUp,
+  Div,
 } from './styles';
 
-const SignIn: React.FC = () => (
+const SignUp: React.FC = () => (
   <Container>
     <Content>
       <Header>
@@ -27,19 +26,17 @@ const SignIn: React.FC = () => (
         <ImageBee src={beespelling} alt="beespelling" />
         <Form>
 
-          <Title>Login</Title>
+          <Title>Cadastro</Title>
 
-          <Input type="username" placeholder="Username" />
+          <Input type="name" placeholder="Nome e sobrenome" />
+          <Input type="username" placeholder="Nome de Usuário" />
           <Input type="password" placeholder="Senha" />
 
-          <ButtonSignIn>Entrar</ButtonSignIn>
-          <ButtonSignUp to="/SignUp">
-            Não tenho cadastro
-          </ButtonSignUp>
+          <ButtonSignUp>Cadastrar</ButtonSignUp>
         </Form>
       </Div>
     </Content>
   </Container>
 );
 
-export default SignIn;
+export default SignUp;

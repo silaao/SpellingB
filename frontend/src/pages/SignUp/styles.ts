@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   width: 100vw;
@@ -94,30 +93,11 @@ export const Input = styled.input`
   font-size: 16px;
 `;
 
-export const ButtonSignIn = styled.button`
+export const ButtonSignUp = styled.button`
   width: 80%;
   max-width: 280px;
   height: 46px;
   border-radius: 6px;
   border: none;
   background-color: #fff;
-`;
-
-export const ButtonSignUp = styled(Link)`
-  width: 80%;
-  max-width: 280px;
-
-  font-size: 18px;
-  font-weight: 500;
-  color: #fff;
-
-  margin-top: 18px;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-
-  & > svg {
-    margin-right: 8px;
-  }
 `;
