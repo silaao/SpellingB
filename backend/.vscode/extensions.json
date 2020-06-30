@@ -7,6 +7,7 @@
     "esbenp.prettier-vscode",
     "naumovs.color-highlight",
     "PKief.material-icon-theme",
-    "wix.vscode-import-cost"
+    "wix.vscode-import-cost",
+    "alexcvzz.vscode-sqlite"
   ]
 }
