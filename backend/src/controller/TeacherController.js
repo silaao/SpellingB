@@ -28,6 +28,17 @@ module.exports = {
     const { name, username, password } = req.body
 
     try {
+      const teacherUsernameExist = await connection('teacher')
+        .where('username', username)
+        .first()
+
+      if (teacherUsernameExist) {
+        return res.status(409).json({
+          message: `The username ${teacherUsernameExist.username} already exists`,
+          key: teacherUsernameExist.username
+        })
+      }
+
       const [teacherId] = await connection('teacher')
         .insert({ name, username, password })
 
