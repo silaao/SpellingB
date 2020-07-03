@@ -1,5 +1,5 @@
 const connection = require('../database/connection')
-const crypto = require('crypto')
+const generateUniqueId = require('../utils/generateUniqueId')
 
 module.exports = {
 
@@ -31,17 +31,17 @@ module.exports = {
         })
       }
 
-      const hash = crypto.randomBytes(14).toString('hex')
+      const uniqueId = generateUniqueId()
 
       const trx = await connection.transaction()
       await trx('game').insert({
-        id: hash,
+        id: uniqueId,
         level_id: id,
         teacher_id: teacher
       })
 
       const game = await trx('game')
-        .where('id', hash)
+        .where('id', uniqueId)
         .first()
 
       await trx.commit()
