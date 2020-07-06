@@ -26,7 +26,7 @@ describe('Teacher', () => {
     expect(response.body).toHaveProperty('id')
   })
 
-  it('should inform if a teacher account with the same username already exists, as the username must be unique', async () => {
+  it('should inform if a teacher account with the same username already exists, because the username must be unique', async () => {
     const response = await request(app)
       .post('/teachers')
       .send(informationForTeacher)
