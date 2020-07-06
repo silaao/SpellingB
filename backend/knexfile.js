@@ -15,7 +15,7 @@ module.exports = {
   test: {
     client: 'sqlite3',
     connection: {
-      filename: './src/database/dump/sb.test.sqlite'
+      filename: './test/database/sb.test.sqlite'
     },
     migrations: {
       directory: './src/database/migrations'

@@ -4,8 +4,8 @@ const connection = require('../../src/database/connection')
 
 describe('Teacher', () => {
   const informationForTeacher = {
-    name: 'Lucas Linhares',
-    username: 'linhares',
+    name: 'Pedro Paulo',
+    username: 'PP',
     password: '12345678'
   }
 
