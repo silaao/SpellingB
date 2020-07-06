@@ -5,6 +5,8 @@ exports.up = knex => {
     table.string('username', 100)
     table.string('password')
     table.timestamps(true, true)
+
+    table.unique('username')
   })
 }
 
