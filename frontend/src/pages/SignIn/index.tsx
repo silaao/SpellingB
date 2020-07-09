@@ -29,10 +29,10 @@ const SignIn: React.FC = () => (
 
           <Title>Login</Title>
 
-          <Input type="username" placeholder="Username" />
+          <Input type="username" placeholder="Nome de Usuário" />
           <Input type="password" placeholder="Senha" />
 
-          <ButtonSignIn>Entrar</ButtonSignIn>
+          <ButtonSignIn to="/LevelScreen">Entrar</ButtonSignIn>
           <ButtonSignUp to="/SignUp">
             Não tenho cadastro
           </ButtonSignUp>
