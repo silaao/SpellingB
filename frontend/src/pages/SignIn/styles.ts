@@ -90,17 +90,39 @@ export const Input = styled.input`
   background-color: #fff;
   margin-bottom: 14px;
   padding: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   font-size: 16px;
 `;
 
-export const ButtonSignIn = styled.button`
+export const ButtonSignIn = styled(Link)`
   width: 80%;
   max-width: 280px;
   height: 46px;
   border-radius: 6px;
   border: none;
   background-color: #fff;
+
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+
+  margin-top: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(94%)
+  }
+
 `;
 
 export const ButtonSignUp = styled(Link)`
