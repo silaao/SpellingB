@@ -19,9 +19,9 @@ import {
   TextoInformacoes,
   ImageBee1,
   // Negrito2,
-  List,
+  // List,
   ButtonHeader,
-  ListItem,
+  // ListItem,
 
 } from './styles';
 
@@ -32,31 +32,31 @@ const LevelScreen: React.FC = () => (
         Logotipo
       </Logotipo1>
 
-      <List>
-        <ListItem>
-          <ButtonHeader to="">
-            <MdVideogameAsset size={35} color="#666666" />
-          </ButtonHeader>
-        </ListItem>
+      {/* <List>
+        <ListItem> */}
+      <ButtonHeader to="">
+        <MdVideogameAsset size={35} color="#666666" />
+      </ButtonHeader>
+      {/* </ListItem> */}
 
-        <ListItem>
-          <ButtonHeader to="">
-            <MdHistory size={35} color="#666666" />
-          </ButtonHeader>
-        </ListItem>
+      {/* <ListItem> */}
+      <ButtonHeader to="">
+        <MdHistory size={35} color="#666666" />
+      </ButtonHeader>
+      {/* </ListItem> */}
 
-        <ListItem>
-          <ButtonHeader to="">
-            <MdPerson size={35} color="#666666" />
-          </ButtonHeader>
-        </ListItem>
+      {/* <ListItem> */}
+      <ButtonHeader to="">
+        <MdPerson size={35} color="#666666" />
+      </ButtonHeader>
+      {/* </ListItem> */}
 
-        <ListItem>
-          <ButtonHeader to="">
-            <MdExitToApp size={35} color="#666666" />
-          </ButtonHeader>
-        </ListItem>
-      </List>
+      {/* <ListItem> */}
+      <ButtonHeader to="">
+        <MdExitToApp size={35} color="#666666" />
+      </ButtonHeader>
+      {/* </ListItem> */}
+      {/* </List> */}
 
       <Titulo />
 

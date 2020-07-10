@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   width: 100vw;
@@ -19,7 +19,7 @@ export const Content = styled.div`
   background-color: #ffffff;
   /* border-radius: 50px; */
   /* box-shadow: 5px 5px 15px #333; */
-  border-style: solid;
+  /* border-style: solid; */
   `;
 
 export const Header = styled.h1`
@@ -29,11 +29,27 @@ export const Header = styled.h1`
     display: flex;
     /* justify-content: center; */
     align-items: center;
-    border-style: solid;
+    /* border-style: solid; */
     /* border-radius: 50px; */
     font-style: normal;
 font-weight: normal;
+
   `;
+
+export const ButtonBack = styled(Link)`
+width: 5%;
+height: 35%;
+/* height: 100%; */
+border-radius: 6px;
+/* border: solid; */
+
+text-decoration: none;
+/* display: flex;
+align-items: center;
+justify-content: center; */
+
+background-color: #fcfcfc;
+`;
 
 export const Div = styled.div`
   width: 100%;
@@ -41,7 +57,7 @@ export const Div = styled.div`
   display: flex;
   /* flex-direction:row; */
   background-color: #ffffff;
-  border-style:solid;
+  /* border-style:solid; */
   /* border-radius: 50px; */
 /* margin-top: 50px; */
 `;
@@ -51,6 +67,7 @@ export const Title = styled.h1`
   font-weight: bold;
   margin-bottom: 30px;
   margin-top: 60px;
+  margin-left: 65px;
 font-style: normal;
 font-weight: bold;
 
@@ -62,7 +79,17 @@ export const Informations = styled.h3`
 font-style: normal;
 font-weight: normal;
   /* font-weight: bold; */
-  /* margin-bottom: 60px; */
+  margin-left: 62px;
+  word-wrap: break-word;
+
+
+`;
+export const Text = styled.h3`
+  font-size: 20px;
+font-style: normal;
+font-weight: normal;
+  /* font-weight: bold; */
+  /* margin-left: 62px; */
   word-wrap: break-word;
 
 
@@ -116,12 +143,14 @@ export const Image = styled.img`
 
 export const Buttons = styled.div`
 width: 100%;
-height: 200px;
-display:flex;
+height: 35%;
+display:flexbox;
   justify-content: center;
-  border-style: solid;
-  border-color: red;
-flex-flow: column;
+  /* border-style: solid; */
+  /* border-color: red;
+flex-flow: column; */
+
+
 
 `;
 export const ButtonOpenGameRoom = styled.button`
@@ -132,7 +161,10 @@ export const ButtonOpenGameRoom = styled.button`
   border: none;
   background-color: #304EC7;
   color: #ffffff;
-  display: compact;
+  margin-top: 40%;
+  cursor: pointer;
+
+  /* display: compact; */
 `;
 export const ButtonLevelWordPreview = styled.button`
   width: 80%;
@@ -142,6 +174,9 @@ export const ButtonLevelWordPreview = styled.button`
   border: none;
   background-color: #304EC7;
   color: #ffffff;
+  cursor: pointer;
+
+  margin-top: 8%;
 `;
 
 // export const ButtonSignUp = styled(Link)`
