@@ -55,4 +55,56 @@ describe('Teacher', () => {
     expect(response.body).toHaveProperty('username')
     expect(response.body.username).toBe('Linhares')
   })
+
+  it('should be able for a teacher authenticated to edit your information', async () => {
+    const { body: teacher } = await request(app)
+      .post('/auth')
+      .send({
+        username: 'Linhares',
+        password: '12345678'
+      })
+
+    const response = await request(app)
+      .put('/teacher')
+      .set('Authorization', `Bearer ${teacher.token}`)
+      .send({
+        username: 'lucas'
+      })
+
+    expect(response.status).toBe(200)
+    expect(response.body).toHaveProperty('username')
+    expect(response.body.username).toBe('lucas')
+  })
+
+  it('should be able for a teacher authenticated to view your information', async () => {
+    const { body: teacher } = await request(app)
+      .post('/auth')
+      .send({
+        username: 'lucas',
+        password: '12345678'
+      })
+
+    const response = await request(app)
+      .get('/teacher')
+      .set('Authorization', `Bearer ${teacher.token}`)
+
+    expect(response.status).toBe(200)
+    expect(response.body).toHaveProperty('name')
+    expect(response.body).toHaveProperty('username')
+  })
+
+  it('should be able for a teacher authenticated to delete your account', async () => {
+    const { body: teacher } = await request(app)
+      .post('/auth')
+      .send({
+        username: 'lucas',
+        password: '12345678'
+      })
+
+    const response = await request(app)
+      .delete('/teacher')
+      .set('Authorization', `Bearer ${teacher.token}`)
+
+    expect(response.status).toBe(204)
+  })
 })

@@ -10,23 +10,26 @@ const PlayerController = require('./controller/PlayerController')
 
 const routes = express.Router()
 
-routes.get('/teachers', TeacherController.index)
+// Public Routes
+
 routes.post('/teachers', TeacherController.create)
-routes.put('/teachers/:id', TeacherController.update)
-routes.get('/teachers/:id', TeacherController.show)
-routes.delete('/teachers/:id', TeacherController.delete)
-
 routes.post('/auth', TeacherController.auth)
+routes.post('/join/:id', PlayerController.create)
 
-routes.post('/join/:id', PlayerController.create) /* Aluno entra em uma sala de jogo */
-routes.get('/players/:id', PlayerController.index) /* Alunos em uma sala de jogo */
+// Private Routes
 
 routes.use(authMiddleware)
+
+routes.get('/teacher', TeacherController.show)
+routes.put('/teacher', TeacherController.update)
+routes.delete('/teacher', TeacherController.delete)
 
 routes.get('/levels', LevelController.index)
 routes.get('/:id/words', WordController.index)
 
-routes.get('/games', GameController.index) /* Lista jogos existentes */
-routes.post('/:id/game', GameController.create) /* Cria uma sala de Jogo */
+routes.get('/games', GameController.index)
+routes.post('/:id/game', GameController.create)
+
+routes.get('/players/:id', PlayerController.index)
 
 module.exports = routes
