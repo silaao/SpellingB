@@ -1,6 +1,39 @@
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+
 const connection = require('../database/connection')
+const authConfig = require('../config/auth.json')
 
 module.exports = {
+  async auth (req, res) {
+    try {
+      const { username, password } = req.body
+
+      const teacher = await connection('teacher')
+        .where('username', username)
+        .first()
+
+      if (!teacher) {
+        return res.status(401).json({ message: "Teacher's Username is incorrect" })
+      }
+
+      if (!(await bcrypt.compare(password, teacher.password))) {
+        return res.status(401).json({ message: 'Invalid password' })
+      }
+
+      const token = await jwt.sign({ id: teacher.id }, authConfig.secret, {
+        expiresIn: 86400
+      })
+
+      return res.status(200).json({
+        token,
+        teacher
+      })
+    } catch (error) {
+      return res.status(409).json(error)
+    }
+  },
+
   async index (req, res) {
     try {
       const teachers = await connection('teacher').select()
@@ -35,14 +68,16 @@ module.exports = {
       if (teacherUsernameExist) {
         return res.status(409).json({
           message: `The username ${teacherUsernameExist.username} already exists`,
-          key: teacherUsernameExist.username
+          username: teacherUsernameExist.username
         })
       }
 
-      const [teacherId] = await connection('teacher')
-        .insert({ name, username, password })
+      const hash = await bcrypt.hash(password, 8)
 
-      return res.status(200).json({ id: teacherId })
+      const [teacherId] = await connection('teacher').insert({ name, username, password: hash })
+      const teacher = await connection('teacher').where('id', teacherId).first()
+
+      return res.status(200).json(teacher)
     } catch (error) {
       return res.status(409).json(error)
     }
@@ -58,10 +93,26 @@ module.exports = {
 
     if (!teacherSearch) { return res.status(404).json('Teacher not found') }
 
+    const usernameExist = await connection('teacher')
+      .where('username', username)
+      .first()
+
+    if (usernameExist) {
+      return res.status(409).json({
+        message: `The username ${usernameExist.username} already exists`,
+        key: usernameExist.username
+      })
+    }
+
     try {
+      if (password) {
+        const hash = await bcrypt.hash(password, 8)
+        await connection('teacher').where('id', id).update({ password: hash })
+      }
+
       await connection('teacher')
         .where('id', id)
-        .update({ name, username, password })
+        .update({ name, username })
 
       const teacher = await connection('teacher').where('id', id).first()
 
