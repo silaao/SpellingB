@@ -22,15 +22,14 @@ export const Header = styled.div`
   width: 100vw;
   height: 10vh;
   margin-top: 30px;
-border-style: solid;
+/* border-style: solid; */
 /* position: */
-  border: 1px solid red;
   display: flex;
 `;
 
 export const Logotipo1 = styled.h1`
 
-  position: absolute;
+position: absolute;
 width: 386px;
 height: 47px;
 left: 37px;
@@ -83,10 +82,10 @@ export const Titulo = styled.h3`
 
 export const TituloInfo = styled.h2`
   /* border: 1px solid red; */
-  color: #383838;
+  color: #000000;
   font-size: 38px;
   font-weight: 300;
-  margin-top: 70px;
+  margin-top: 9%;
   margin-bottom: 10px;
   text-align: center;
 `;
@@ -118,9 +117,9 @@ export const ButtonHeader = styled(Link)`
 
 export const ContainerInformacoes = styled.div`
   width:100vw;
-  height:30vh;
-margin-top: 60px;
-  border: 1px solid red;
+  height:40vh;
+margin-top: 80px;
+  /* border: 1px solid red; */
   display: flex;
 
 padding: 35px;
@@ -130,48 +129,51 @@ padding: 35px;
 `;
 
 export const Informacoes = styled.section`
-  width: 200px;
-  height: 200px;
-  border: 1px solid red;
+  width: 250px;
+  height: 250px;
+  /* border: 1px solid red; */
 
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 
   justify-content: center;
-  align-items: center;
-
+  /* align-items: center; */
+  margin-top: 20px;
   /* margin: 0 50px; */
 flex-wrap: wrap;
 `;
 
 export const ImageBee1 = styled.img`
 /* border-style: solid; */
-width: 200px;
-height: 200px;
+width: 250px;
+height: 250px;
 align-self: center;
 padding: 20px;
 `;
 
 export const TituloInformacoes = styled.h1`
-  color: #383838;
+  color: #FFFFFF;
   font-size: 28px;
   font-weight: 500;
   position: absolute;
+  margin-top: 6%;
+
   /* margin: 0px 0px 10px; */
 
 `;
 
 export const TextoInformacoes = styled.h2`
-  color: #383838;
+  color: #FFFFFF;
   font-size: 17px;
   font-weight: lighter;
-  text-align: justify;
+  text-align: center;
   line-height: 30px;
   letter-spacing: 5%;
   position: absolute;
-  border-style: solid;
+  /* border-style: solid; */
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 9%;
+  max-width: 170px;
 `;
 
 export const Negrito2 = styled.span`

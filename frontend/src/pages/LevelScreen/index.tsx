@@ -62,7 +62,7 @@ const LevelScreen: React.FC = () => (
 
     </Header>
 
-    <TituloInfo> Selecione o grupo de palavras para criação de Jogo </TituloInfo>
+    <TituloInfo> Selecione o grupo de palavras para criação de jogo </TituloInfo>
     <ContainerInformacoes>
 
       <Informacoes>
