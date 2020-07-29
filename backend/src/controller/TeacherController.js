@@ -34,17 +34,8 @@ module.exports = {
     }
   },
 
-  async index (req, res) {
-    try {
-      const teachers = await connection('teacher').select()
-      return res.status(200).json(teachers)
-    } catch (error) {
-      return res.status(500).json(error)
-    }
-  },
-
   async show (req, res) {
-    const { id } = req.params
+    const id = req.userId
 
     try {
       const teacher = await connection('teacher').where('id', id).first()
@@ -84,7 +75,7 @@ module.exports = {
   },
 
   async update (req, res) {
-    const { id } = req.params
+    const id = req.userId
     const { name, username, password } = req.body
 
     const teacherSearch = await connection('teacher')
@@ -123,7 +114,7 @@ module.exports = {
   },
 
   async delete (req, res) {
-    const { id } = req.params
+    const id = req.userId
 
     try {
       await connection('teacher').where('id', id).del()
